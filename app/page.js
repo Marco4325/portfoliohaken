@@ -20,7 +20,7 @@ export default function Home() {
 
   const handleLogoClick = () => {
     let blinkCount = 3; 
-    let blinkInterval = 200; 
+    let blinkInterval = 175; 
 
     setIsActive(false);
     setIsAnimating(true);
@@ -31,7 +31,7 @@ export default function Home() {
         blinkCount--;
         if (blinkCount === 0) { clearInterval(blink); }
       }, blinkInterval);
-    }, 3000);
+    }, 4000);
 
     setTimeout(() => {
       setIsAnimating(false);

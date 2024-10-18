@@ -1,101 +1,95 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import hakenEyesOpenedLogo from "../public/hakenPolvoOlhoAberto.png";
+import hakenEyesClosedLogo from "../public/hakenPolvoOlhoFechado.png";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isActive, setIsActive] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+  /* buttons */
+  const [firstButtonClicked, setFirstButtonClicked] = useState(false);
+  const [secondButtonClicked, setSecondButtonClicked] = useState(false);
+  const [thirdButtonClicked, setThirdButtonClicked] = useState(false);
+
+  const [showButtons, setShowButtons] = useState(false);
+
+  const handleLogoClick = () => {
+    let blinkCount = 3; 
+    let blinkInterval = 200; 
+
+    setIsActive(false);
+    setIsAnimating(true);
+
+    setTimeout(() => {
+      const blink = setInterval(() => {
+        setIsOpen(prev => !prev); 
+        blinkCount--;
+        if (blinkCount === 0) { clearInterval(blink); }
+      }, blinkInterval);
+    }, 3000);
+
+    setTimeout(() => {
+      setIsAnimating(false);
+      setIsVisible(false);
+      setShowButtons(true);
+    }, 6000);
+    
+  };
+
+  const handleFistButtonClick = () =>{
+    setFirstButtonClicked(true);
+  }
+
+  const handleSecondButtonClick = () =>{
+    setSecondButtonClicked(true);
+  }
+
+  const handleThirdButtonClick = () =>{
+    setThirdButtonClicked(true);
+  }
+
+  return (
+    <div className="grid grid-rows-[50%px_1fr_50%px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <button onClick={handleLogoClick} disabled={!isActive}>
+        {isVisible && (
           <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            id="image"
+            src={isOpen ? hakenEyesClosedLogo : hakenEyesOpenedLogo}
+            width={360}
+            height={306}
+            alt="hakenLogo"
+
+            className={`${
+              isAnimating ? "scale-up-down" : ""
+            }`}
+            
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        )}
+
+      </button>
+        {showButtons && (
+          <div className="absolute inset-0 flex flex-col items-center justify-between">
+
+            <button onClick={handleFistButtonClick} className={firstButtonClicked ? "rounded-full scale-down-first-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-4 px-8 mb-8"} disabled={firstButtonClicked}>
+              Quem sou eu?
+            </button>
+
+            <button onClick={handleSecondButtonClick} className={secondButtonClicked ? "rounded-full scale-down-second-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-0 px-0 mb-8"} disabled={secondButtonClicked}>
+              Meus Projetos
+            </button>
+
+            <button onClick={handleThirdButtonClick} className={thirdButtonClicked ? "rounded-full scale-down-third-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-4 px-8 mb-8"} disabled={thirdButtonClicked}>
+              Entrar em Contato
+            </button>
+            
+          </div>
+        )}
+
     </div>
   );
 }

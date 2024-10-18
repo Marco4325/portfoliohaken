@@ -6,6 +6,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    safelist: '[zoom-out_1s_zoom-in]',
     extend: {
       colors: {
         background: "var(--background)",

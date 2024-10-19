@@ -41,24 +41,43 @@ body {
   }
 }
 
-.scale-up-down {
-  animation: scaleUpDown 6s forwards;
+@keyframes scaleUpDownLogo {
+  0% {
+    opacity: 0;
+    position: absolute;
+    top: 70%;
+    transform: scale(1);
+  }
+  83.33% {
+    opacity: 1;
+    position: absolute;
+    top: 80%;
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    position: absolute;
+    top: 45%;
+    transform: scale(0);
+  }
 }
 
 @keyframes scaleDownFirstButton {
   0% {
     transform: scale(1);
     padding: 50px 95px;
-    margin-top: 140px;
+    margin-top: 120px;
+    margin-bottom: 90px;
     border-color: #059EF4;
   }
   100% {
     transform: scale(2);
     border-radius: 0px;
 
-    padding: 50px 19.21%;
+    padding: 100px 24.9%;
     margin-top: 76px;
-    border-color: #059EF4;
+    margin-bottom: 150px;
+    border-bottom-color: #059EF4;
   }
 }
 
@@ -67,16 +86,18 @@ body {
     transform: scale(1);
     padding: 50px 100px;
     margin-top: 15px; 
-    margin-bottom: 35px;
+    margin-bottom: 65px;
     border-color: #059EF4;
   }
   100% {
     transform: scale(2);
     border-radius: 0px;
 
-    margin-top: 35px;
-    padding: 50px 19.175%; 
-    border-color: #059EF4;
+    margin-top: 53px;
+    margin-bottom: 150px;
+    padding: 100px 24.9%; 
+    border-bottom-color: #059EF4;
+    border-top-color: #059EF4;
   }
 }
 
@@ -84,7 +105,7 @@ body {
   0% {
     transform: scale(1);
     padding: 50px 70px;
-    margin-bottom: 160px;
+    margin-bottom: 40px;
     border-color: #059EF4;
   }
   100% {
@@ -92,9 +113,17 @@ body {
     border-radius: 0px;
 
     margin-top: 35px;
-    padding: 50px 17.6%;
-    border-color: #059EF4;
+    padding: 82px 24.9%;
+    border-top-color: #059EF4;
   }
+}
+
+.scale-up-down {
+  animation: scaleUpDown 6s forwards;
+}
+
+.scale-up-down-logo{
+  animation: scaleUpDownLogo 6s forwards;
 }
 
 .scale-down-first-button{
@@ -128,12 +157,13 @@ button {
 
 .buttons:nth-child(1){
   padding: 50px 95px;
-  margin-top: 140px;
+  margin-top: 120px;
+  margin-bottom: 90px;
 }
 
 .buttons:nth-child(2){
   padding: 50px 100px;
-  margin-top: 15px; 
+  margin-top: -45px; 
   margin-bottom: 35px;
 }
 
@@ -155,7 +185,7 @@ button {
 
 .button-fade-in {
   opacity: 0; 
-  animation: fadeIn 2s forwards; 
+  animation: fadeIn 0.5s forwards; 
 }
 
 .button-fade-in:nth-child(1) {
@@ -168,4 +198,47 @@ button {
 
 .button-fade-in:nth-child(3) {
   animation-delay: 1.5s; 
+}
+
+/* bio/texts */
+
+@keyframes bioFadeIn{
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1; 
+  }
+}
+
+.haken-border{
+  border-color:#059EF4;
+}
+
+.bio-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.bio-fade-in{
+  opacity: 0;
+  animation: bioFadeIn 4s forwards;
+}
+
+
+/* div */
+
+.relative{
+  position: relative;
+  top: -450px;
 }

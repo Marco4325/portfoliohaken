@@ -16,6 +16,8 @@ export default function Home() {
 
   const [showHakenLogo, setShowHakenlogo] = useState(false);
   const [showBio, setShowBio] = useState(false);
+  const [showProjects, setShowProjects] = useState(false);
+  const [showContacts, setShowContacts] = useState(false);
 
   /* buttons */
   const [firstButtonText, setFirstButtonText] = useState("Quem sou eu?");
@@ -62,11 +64,13 @@ export default function Home() {
   const handleSecondButtonClick = () =>{
     setSecondButtonClicked(true);
     setSecondButtonText("");
+    setShowProjects(true);
   }
 
   const handleThirdButtonClick = () =>{
     setThirdButtonClicked(true);
     setThirdButtonText("");
+    setShowContacts(true);
   }
 
   return (
@@ -93,49 +97,92 @@ export default function Home() {
           width={360}
           height={45}
           alt="hakenLogo"
-          className={`absolute mt-10 ${isAnimating ? "scale-up-down-logo" : ""}`} // Use absolute para manter a posição
-          style={{ top: '80%', transform: 'translate(-50%, -100%)' }} // Ajuste conforme necessário
+          className={`absolute mt-10 ${isAnimating ? "scale-up-down-logo" : ""}`}
+          style={{ top: '80%', transform: 'translate(-50%, -100%)' }}
         />
       )}
 
       {showButtons && (
         <div className="absolute inset-0 flex flex-col items-center justify-between">
+          
 
-          <button onClick={handleFirstButtonClick} className={firstButtonClicked ? "rounded-full scale-down-first-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-4 px-8 mb-8"} disabled={firstButtonClicked}>
+
+          <button onClick={handleFirstButtonClick} className={firstButtonClicked ? "button-scale rounded-full scale-down-first-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-4 px-8 mb-8"} disabled={firstButtonClicked}>
             {firstButtonText}
+            {showBio && (
+              <div className={showBio ? "relative flex justify-between items-center w-full max-w-12x1 mt-10 p-8 bio-container bio-fade-in" : ""}>
+                <div className="text-left w-1/2 pr-8">
+                  <h2 className="text-4xl font-bold mb-4">Sobre mim</h2>
+                  <p className="text-lg leading-relaxed">
+                    Olá, muito prazer! Me chamo Marco Antônio, sou estudante de Ciências da Computação na Universidade Tecnológica Federal do Paraná (UTFPR).
+                    Estou na área por paixão e isso faz eu me dedicar ao máximo todos os dias. 
+                  </p>
+                </div>
+
+                <div className={showBio ? "w-1/2 flex justify-center bio-fade-in" : ""}>
+                  <Image
+                    src={profileImage}
+                    width={200}
+                    height={200}
+                    className="rounded-full border-4 haken-border"
+                  />
+                </div>
+              </div>
+            )}
           </button>
 
-          <button onClick={handleSecondButtonClick} className={secondButtonClicked ? "rounded-full scale-down-second-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-0 px-0 mb-8"} disabled={secondButtonClicked}>
+          <button onClick={handleSecondButtonClick} className={secondButtonClicked ? "button-scale rounded-full scale-down-second-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-0 px-0 mb-8"} disabled={secondButtonClicked}>
             {secondButtonText}
+            {showProjects && (
+              <div className={showProjects ? "relative flex justify-between items-center w-full max-w-12x1 mt-10 p-8 bio-container bio-fade-in" : ""}>
+                <div className="text-left w-1/2 pr-8">
+                  <h2 className="text-4xl font-bold mb-4">Sobre mim</h2>
+                  <p className="text-lg leading-relaxed">
+                    Olá, muito prazer! Me chamo Marco Antônio, sou estudante de Ciências da Computação na Universidade Tecnológica Federal do Paraná (UTFPR).
+                    Estou na área por paixão e isso faz eu me dedicar ao máximo todos os dias. 
+                  </p>
+                </div>
+
+                <div className={showProjects ? "w-1/2 flex justify-center bio-fade-in" : ""}>
+                  <Image
+                    src={profileImage}
+                    width={200}
+                    height={200}
+                    className="rounded-full border-4 haken-border"
+                  />
+                </div>
+              </div>
+            )}
           </button>
 
-          <button onClick={handleThirdButtonClick} className={thirdButtonClicked ? "rounded-full scale-down-third-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-4 px-8 mb-8"} disabled={thirdButtonClicked}>
+          <button onClick={handleThirdButtonClick} className={thirdButtonClicked ? "button-scale rounded-full scale-down-third-button bg-buttons text-white py-4 px-8 mb-8" : "rounded-full buttons button-fade-in bg-buttons text-white py-4 px-8 mb-8"} disabled={thirdButtonClicked}>
             {thirdButtonText}
+            {showContacts && (
+              <div className={showContacts ? "relative flex justify-between items-center w-full max-w-12x1 mt-10 p-8 bio-container bio-fade-in" : ""}>
+                <div className="text-left w-1/2 pr-8">
+                  <h2 className="text-4xl font-bold mb-4">Sobre mim</h2>
+                  <p className="text-lg leading-relaxed">
+                    Olá, muito prazer! Me chamo Marco Antônio, sou estudante de Ciências da Computação na Universidade Tecnológica Federal do Paraná (UTFPR).
+                    Estou na área por paixão e isso faz eu me dedicar ao máximo todos os dias. 
+                  </p>
+                </div>
+
+                <div className={showContacts ? "w-1/2 flex justify-center bio-fade-in" : ""}>
+                  <Image
+                    src={profileImage}
+                    width={200}
+                    height={200}
+                    className="rounded-full border-4 haken-border"
+                  />
+                </div>
+              </div>
+            )}
           </button>
           
         </div>
       )}
 
-      {showBio && (
-      <div className={showBio ? "relative flex justify-between items-center w-full max-w-12x1 mt-10 p-8 bio-container bio-fade-in" : ""}>
-        <div className="text-left w-1/2 pr-8">
-          <h2 className="text-4xl font-bold mb-4">Quem sou eu?</h2>
-          <p className="text-lg leading-relaxed">
-            Olá, muito prazer! Me chamo Marco Antônio, sou estudante de Ciências da Computação na Universidade Tecnológica Federal do Paraná (UTFPR).
-            Estou na área por paixão e isso faz eu me dedicar ao máximo todos os dias. 
-          </p>
-        </div>
-
-        <div className={showBio ? "w-1/2 flex justify-center bio-fade-in" : ""}>
-          <Image
-            src={profileImage}
-            width={200}
-            height={200}
-            className="rounded-full border-4 haken-border"
-          />
-        </div>
-      </div>
-    )}
+      
 
     </div>
   );

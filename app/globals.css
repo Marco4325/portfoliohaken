@@ -48,6 +48,12 @@ body {
     top: 70%;
     transform: scale(1);
   }
+  75%{
+    opacity: 1;
+    position: absolute;
+    top: 80%;
+    transform: scale(1.4);
+  }
   83.33% {
     opacity: 1;
     position: absolute;
@@ -64,38 +70,52 @@ body {
 
 @keyframes scaleDownFirstButton {
   0% {
-    transform: scale(1);
+    transform: scale(0.5);
     padding: 50px 95px;
-    margin-top: 120px;
-    margin-bottom: 90px;
+    margin-top: 0px;
+    margin-bottom: -55px;
+    border-color: #059EF4;
+  }
+  80%{
+    transform: scale(0.4);
+    padding: 50px 95px;
+    margin-top: 0px;
+    margin-bottom: -55px;
     border-color: #059EF4;
   }
   100% {
     transform: scale(2);
     border-radius: 0px;
 
-    padding: 100px 24.9%;
-    margin-top: 76px;
-    margin-bottom: 150px;
+    padding: -20px 24.9%;
+    margin-top: 0px;
+    margin-bottom: 0px;
     border-bottom-color: #059EF4;
   }
 }
 
 @keyframes scaleDownSecondButton {
   0% {
-    transform: scale(1);
-    padding: 50px 100px;
-    margin-top: 15px; 
-    margin-bottom: 65px;
+    transform: scale(0.5);
+    padding: -20px 24.9%px;
+    margin-top: -20px; 
+    margin-bottom: 120px;
+    border-color: #059EF4;
+  }
+  80%{
+    transform: scale(0.4);
+    padding: -20px 24.9%px;
+    margin-top: -20px; 
+    margin-bottom: 120px;
     border-color: #059EF4;
   }
   100% {
     transform: scale(2);
     border-radius: 0px;
 
-    margin-top: 53px;
-    margin-bottom: 150px;
-    padding: 100px 24.9%; 
+    margin-top: 0px;
+    margin-bottom: 120px;
+    padding: -20px 24.9%; 
     border-bottom-color: #059EF4;
     border-top-color: #059EF4;
   }
@@ -103,17 +123,26 @@ body {
 
 @keyframes scaleDownThirdButton {
   0% {
-    transform: scale(1);
+    transform: scale(0.5);
     padding: 50px 70px;
-    margin-bottom: 40px;
+    margin-top: -120px;
+    margin-bottom: 0px;
+    border-color: #059EF4;
+  }
+  80%{
+    transform: scale(0.4);
+    padding: 50px 70px;
+    margin-top: -120px;
+    margin-bottom: 0px;
     border-color: #059EF4;
   }
   100% {
     transform: scale(2);
     border-radius: 0px;
 
-    margin-top: 35px;
-    padding: 82px 24.9%;
+    margin-top: -120px;
+    margin-bottom: 0px;
+    padding: -20px 24.9%;
     border-top-color: #059EF4;
   }
 }
@@ -156,19 +185,19 @@ button {
 }
 
 .buttons:nth-child(1){
-  padding: 50px 95px;
+  padding: 50px 115px;
   margin-top: 120px;
   margin-bottom: 90px;
 }
 
 .buttons:nth-child(2){
-  padding: 50px 100px;
+  padding: 50px 120px;
   margin-top: -45px; 
   margin-bottom: 35px;
 }
 
 .buttons:nth-child(3){
-  padding: 50px 70px;
+  padding: 50px 90px;
   margin-bottom: 160px; 
 }
 
@@ -220,16 +249,6 @@ button {
   border-color:#059EF4;
 }
 
-.bio-container {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
-}
-
 .bio-fade-in{
   opacity: 0;
   animation: bioFadeIn 4s forwards;
@@ -239,6 +258,9 @@ button {
 /* div */
 
 .relative{
-  position: relative;
-  top: -450px;
+  position: sticky;
+}
+
+.button-scale{
+  scale: 50%;
 }

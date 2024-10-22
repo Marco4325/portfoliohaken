@@ -76,8 +76,8 @@ body {
     margin-bottom: -55px;
     border-color: #059EF4;
   }
-  80%{
-    transform: scale(0.4);
+  40%{
+    transform: scale(0.8);
     padding: 50px 95px;
     margin-top: 0px;
     margin-bottom: -55px;
@@ -89,8 +89,8 @@ body {
 
     padding: -20px 24.9%;
     margin-top: 0px;
-    margin-bottom: 0px;
-    border-bottom-color: #059EF4;
+    margin-bottom: 120px;
+    border-bottom-color: #0C95E2;
   }
 }
 
@@ -102,8 +102,8 @@ body {
     margin-bottom: 120px;
     border-color: #059EF4;
   }
-  80%{
-    transform: scale(0.4);
+  40%{
+    transform: scale(0.8);
     padding: -20px 24.9%px;
     margin-top: -20px; 
     margin-bottom: 120px;
@@ -113,11 +113,11 @@ body {
     transform: scale(2);
     border-radius: 0px;
 
-    margin-top: 0px;
-    margin-bottom: 120px;
-    padding: -20px 24.9%; 
-    border-bottom-color: #059EF4;
-    border-top-color: #059EF4;
+    margin-top: -120.5px;
+    margin-bottom: 0px;
+    padding: 19px 24.9%; 
+    border-bottom-color: #0C95E2;
+    border-top-color: #0C95E2;
   }
 }
 
@@ -125,14 +125,14 @@ body {
   0% {
     transform: scale(0.5);
     padding: 50px 70px;
-    margin-top: -120px;
+    margin-top: 60px;
     margin-bottom: 0px;
     border-color: #059EF4;
   }
-  80%{
-    transform: scale(0.4);
+  40%{
+    transform: scale(0.8);
     padding: 50px 70px;
-    margin-top: -120px;
+    margin-top: 60px;
     margin-bottom: 0px;
     border-color: #059EF4;
   }
@@ -140,10 +140,10 @@ body {
     transform: scale(2);
     border-radius: 0px;
 
-    margin-top: -120px;
-    margin-bottom: 0px;
+    margin-top: 120px;
+    margin-bottom: -138px;
     padding: -20px 24.9%;
-    border-top-color: #059EF4;
+    border-top-color: #0C95E2;
   }
 }
 
@@ -181,7 +181,20 @@ button {
 }
 
 .bg-buttons{
-  background-color: #252525;
+  background-color: #212121;
+}
+
+@keyframes buttonsOpeningTransition{
+  0%{
+    background-color: #212121;
+  }
+  100%{
+    background-image: url("../public/FUNDO.svg");
+  }
+}
+
+.bg-buttons-opened{
+  animation: buttonsOpeningTransition 4s forwards;
 }
 
 .buttons:nth-child(1){
@@ -245,8 +258,12 @@ button {
   }
 }
 
+.haken-static-color{
+  color: #0C95E2;
+}
+
 .haken-border{
-  border-color:#059EF4;
+  border-color:#0C95E2;
 }
 
 .bio-fade-in{
@@ -263,4 +280,76 @@ button {
 
 .button-scale{
   scale: 50%;
+}
+
+/* About Me */
+
+.about-me-title-position{
+  position: absolute;
+  left: 44%;
+  top: -20%;
+}
+
+.about-me-tile-font-size{
+  font-size: 1.2em;
+}
+
+/* Projects */
+
+.projects-scale{
+  width: 100%;
+  height: 35.8%;
+}
+
+.projects-title-size{
+  font-size: 1.2em;
+}
+
+.projects-title{
+  position: fixed;
+  top: 4%;
+  left: 42.8%;
+}
+
+.projects-button-position{
+  position: relative;
+  left: 24%;
+  bottom: 50%;
+}
+
+/* Contacts */
+
+.contacts-scale{
+  position: relative;
+  top: -12.34%;
+  scale: 50%;
+  width: 1863px;
+  height: 300px;
+}
+
+.contacts-text-centralize{
+  position: absolute;
+  left: 42.5%;
+  text-align: center;
+  vertical-align: top;
+}
+
+.contacts-image-centralize{
+  position: absolute;
+  left: 42.5%;
+}
+
+.contacts-top{
+  top: -180%;
+}
+
+/* Contacts Icons */
+
+.icon-colors{
+  transition-duration: 1s;
+  color: #1A1A1A;
+}
+
+.icon-colors:hover{
+  color:#059EF4;
 }

@@ -80,7 +80,7 @@ body {
   0% {
     transform: scale(0.5);
     padding: 50px 95px;
-    margin-top: -120px;
+    margin-top: -101.25px;
     margin-bottom: 120px;
     border-color: #059EF4;
   }
@@ -106,14 +106,14 @@ body {
   0% {
     transform: scale(0.5);
     padding: -20px 24.9%px;
-    margin-top: -200px; 
+    margin-top: -230px; 
     margin-bottom: 0px;
     border-color: #059EF4;
   }
   40%{
     transform: scale(0.8);
     padding: -20px 24.9%px;
-    margin-top: -200px; 
+    margin-top: -230px; 
     margin-bottom: 0px;
     border-color: #059EF4;
   }
@@ -133,14 +133,14 @@ body {
     transform: scale(0.5);
     padding: 50px 70px;
     margin-top: 120px;
-    margin-bottom: -120px;
+    margin-bottom: -110px;
     border-color: #059EF4;
   }
   40%{
     transform: scale(0.8);
     padding: 50px 70px;
     margin-top: 120px;
-    margin-bottom: -120px;
+    margin-bottom: -110px;
     border-color: #059EF4;
   }
   100% {

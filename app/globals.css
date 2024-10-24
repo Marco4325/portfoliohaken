@@ -9,14 +9,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: ;
     --foreground: #ededed;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background-color: #0a0a0a;
+  background-image: url("../public/FUNDO.svg");
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -26,6 +26,14 @@ body {
   }
 }
 
+@font-face {
+  font-family: Poppins;
+  src: url("../public/Poppins-Regular.ttf")
+}
+
+.Poppins {
+  font-family: Poppins;
+}
 
 /* scalling settings */
 
@@ -72,15 +80,15 @@ body {
   0% {
     transform: scale(0.5);
     padding: 50px 95px;
-    margin-top: 0px;
-    margin-bottom: -55px;
+    margin-top: -120px;
+    margin-bottom: 120px;
     border-color: #059EF4;
   }
   40%{
     transform: scale(0.8);
     padding: 50px 95px;
-    margin-top: 0px;
-    margin-bottom: -55px;
+    margin-top: -80px;
+    margin-bottom: 120px;
     border-color: #059EF4;
   }
   100% {
@@ -90,7 +98,7 @@ body {
     padding: -20px 24.9%;
     margin-top: 0px;
     margin-bottom: 120px;
-    border-bottom-color: #0C95E2;
+    background-color: transparent;
   }
 }
 
@@ -98,15 +106,15 @@ body {
   0% {
     transform: scale(0.5);
     padding: -20px 24.9%px;
-    margin-top: -20px; 
-    margin-bottom: 120px;
+    margin-top: -200px; 
+    margin-bottom: 0px;
     border-color: #059EF4;
   }
   40%{
     transform: scale(0.8);
     padding: -20px 24.9%px;
-    margin-top: -20px; 
-    margin-bottom: 120px;
+    margin-top: -200px; 
+    margin-bottom: 0px;
     border-color: #059EF4;
   }
   100% {
@@ -115,9 +123,8 @@ body {
 
     margin-top: -120.5px;
     margin-bottom: 0px;
-    padding: 19px 24.9%; 
-    border-bottom-color: #0C95E2;
-    border-top-color: #0C95E2;
+    padding: 19px 24.9%;
+    background-color: transparent;
   }
 }
 
@@ -125,15 +132,15 @@ body {
   0% {
     transform: scale(0.5);
     padding: 50px 70px;
-    margin-top: 60px;
-    margin-bottom: 0px;
+    margin-top: 120px;
+    margin-bottom: -120px;
     border-color: #059EF4;
   }
   40%{
     transform: scale(0.8);
     padding: 50px 70px;
-    margin-top: 60px;
-    margin-bottom: 0px;
+    margin-top: 120px;
+    margin-bottom: -120px;
     border-color: #059EF4;
   }
   100% {
@@ -144,6 +151,7 @@ body {
     margin-bottom: -138px;
     padding: -20px 24.9%;
     border-top-color: #0C95E2;
+    background-color: #059EF4;
   }
 }
 
@@ -184,34 +192,21 @@ button {
   background-color: #212121;
 }
 
-@keyframes buttonsOpeningTransition{
-  0%{
-    background-color: #212121;
-  }
-  100%{
-    background-image: url("../public/FUNDO.svg");
-  }
-}
-
-.bg-buttons-opened{
-  animation: buttonsOpeningTransition 4s forwards;
-}
-
 .buttons:nth-child(1){
   padding: 50px 115px;
-  margin-top: 120px;
-  margin-bottom: 90px;
+  margin-top: 20px;
+  margin-bottom: 120px;
 }
 
 .buttons:nth-child(2){
+  position: absolute;
   padding: 50px 120px;
-  margin-top: -45px; 
-  margin-bottom: 35px;
+  top: 42.5%;
 }
 
 .buttons:nth-child(3){
   padding: 50px 90px;
-  margin-bottom: 160px; 
+  margin-bottom: 20px; 
 }
 
 /* fade settings */
@@ -286,17 +281,30 @@ button {
 
 .about-me-title-position{
   position: absolute;
-  left: 44%;
-  top: -20%;
+  left: 43.75%;
+  top: -30.5%;
 }
 
 .about-me-tile-font-size{
   font-size: 1.2em;
 }
 
+.about-me-text{
+  position: relative;
+  left: -25%;
+}
+
+.about-me-image{
+  position: absolute;
+  left: 25%;
+  top: 100%;
+}
+
 /* Projects */
 
 .projects-scale{
+  position: absolute;
+  top: 55%;
   width: 100%;
   height: 35.8%;
 }
@@ -307,49 +315,58 @@ button {
 
 .projects-title{
   position: fixed;
-  top: 4%;
-  left: 42.8%;
+  top: -2%;
+  left: 42.75%;
 }
 
 .projects-button-position{
-  position: relative;
-  left: 24%;
-  bottom: 50%;
+  position: absolute;
+  left: 24.5%;
+  bottom: -180%;
+}
+
+.projects-background{
+  border-radius: 0.5rem;
+  padding: 50px 50px;
+  background-color: #212121;
 }
 
 /* Contacts */
 
 .contacts-scale{
-  position: relative;
-  top: -12.34%;
+  position: absolute;
+  top: 70%;
   scale: 50%;
-  width: 1863px;
-  height: 300px;
+  width: 1878.5px;
+  height: 171px;
 }
 
 .contacts-text-centralize{
   position: absolute;
-  left: 42.5%;
-  text-align: center;
-  vertical-align: top;
+  left: 43%;
+  top: -100%;
+}
+
+.black-contacts-text{
+  color: #0a0a0a;
 }
 
 .contacts-image-centralize{
   position: absolute;
-  left: 42.5%;
+  left: 42.75%;
 }
 
 .contacts-top{
-  top: -180%;
+  top: -160%;
 }
 
 /* Contacts Icons */
 
 .icon-colors{
   transition-duration: 1s;
-  color: #1A1A1A;
+  color: #0a0a0a;
 }
 
 .icon-colors:hover{
-  color:#059EF4;
+  color:#FFFFFF;
 }

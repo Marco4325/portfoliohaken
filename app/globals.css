@@ -269,7 +269,7 @@ button {
 
 .bio-fade-in{
   opacity: 0;
-  animation: bioFadeIn 4s forwards;
+  animation: bioFadeIn 2.1s forwards;
 }
 
 

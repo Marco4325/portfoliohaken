@@ -91,6 +91,9 @@ body {
     margin-bottom: 120px;
     border-color: #059EF4;
   }
+  60%{
+    border-color: transparent;
+  }
   100% {
     transform: scale(2);
     border-radius: 0px;
@@ -116,6 +119,9 @@ body {
     margin-top: -230px; 
     margin-bottom: 0px;
     border-color: #059EF4;
+  }
+  60%{
+    border-color: transparent;
   }
   100% {
     transform: scale(2);
